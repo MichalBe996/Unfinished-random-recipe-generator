@@ -1,19 +1,10 @@
 
-
-# projekt apki, w którą wpisuje co masz w lodówce/spiżarce i losuje Ci jakiś przepis ze strony
-# z bibliotek które się przydadzą to na bank webscraping, czyli requests i beautifulsoup
-# jakiś framework z interfejsem graficznym, na pewno nie tkinter bo jest brzydki
-# pewno biblioteka random, żeby przepis był losowy
-# oczywiście biblioteka lxml, bo do beautifulsoup
-
-# najpierw zrobię okienko, potem zadbam o funkcjonalność
 import tkinter
 import tkinter as tk
 import requests
 from bs4 import BeautifulSoup
 import lxml
 
-# z klasą jest więcej pierdolenia, więc robię samymi funkcjami
 recipes_links = []
 for page in range(2, 54):
     result = requests.get("https://food52.com/recipes/search?o=newest&page="+str(page)+"&tag=test-kitchen-approved")
